@@ -1,5 +1,5 @@
 # Demo Webhook triggered
-#github
+#github-webhook
 
 Example Maven project generated using `maven-archetype-quickstart`
 
