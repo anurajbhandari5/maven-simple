@@ -22,6 +22,13 @@ pipeline {
           }
 
       }
+      stage('Code Analysis') {
+            steps {
+                withSonarQubeEnv(installationName: 'SonarCloud') { // You can override the credential to be used
+      sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'
+    }
+            }  
+      }
       stage("Deploy") {
           steps {
             git 'https://github.com/jglick/simple-maven-project-with-tests.git'  
